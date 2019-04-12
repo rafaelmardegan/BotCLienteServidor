@@ -1,4 +1,4 @@
-package previsaotempo;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,27 +19,27 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-public class ExecutorAPI {
+public class ServidorTempo {
 
     //Url base da API e token para liberar o acesso por HTTP
     private static String URLBase = "http://apiadvisor.climatempo.com.br/";
     private static String token = "76a7d496043960edcbe022a610874be7";
 
     //Atributos com a instancia
-    private static ExecutorAPI instancia;
+    private static ServidorTempo instancia;
     private CloseableHttpClient cliente;
 
     //Executa a chamada
-    private ExecutorAPI() {
+    private ServidorTempo() {
         this.cliente = HttpClients.createDefault();
     }
 
 //Metodo para instanciar a chamada HTTP
-    public static ExecutorAPI getInstancia() {
+    public static ServidorTempo getInstancia() {
 
         //Verifica se ja tem algo instaciado, se sim retorna se não, cria
         if (instancia == null) {
-            instancia = new ExecutorAPI();
+            instancia = new ServidorTempo();
         }
         return instancia;
     }
@@ -49,7 +49,7 @@ public class ExecutorAPI {
     public String doBuscadorCidadeHTTP(String cidade, String estado) {
         String retorno = null;
         try {
-            HttpGet httpGet = new HttpGet(ExecutorAPI.URLBase+"api/v1/locale/city?name="+cidade+"&state="+estado+"&token="+ExecutorAPI.token);
+            HttpGet httpGet = new HttpGet(ServidorTempo.URLBase+"api/v1/locale/city?name="+cidade+"&state="+estado+"&token="+ServidorTempo.token);
 
             //Aqui manipula o retorno recebido
             ResponseHandler<String> respondeHandler = new ResponseHandler<String>() {
@@ -69,7 +69,7 @@ public class ExecutorAPI {
             retorno = this.cliente.execute(httpGet, respondeHandler);
             //System.out.println("------------------------------BUSCA----------------------------");
         } catch (IOException ex) {
-            Logger.getLogger(ExecutorAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServidorTempo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
     }
@@ -82,8 +82,8 @@ public class ExecutorAPI {
     public String doTempoAgora(String idCidade) {
         String retorno = null;
         try {
-            //HttpGet httpGet = new HttpGet(ExecutorAPI.URLBase+"/api/v1/weather/locale/363/current?token="+ExecutorAPI.token);
-            HttpGet httpGet = new HttpGet(ExecutorAPI.URLBase+"/api/v1/weather/locale/"+idCidade+"/current?token="+ExecutorAPI.token);
+            //HttpGet httpGet = new HttpGet(ServidorTempo.URLBase+"/api/v1/weather/locale/363/current?token="+ServidorTempo.token);
+            HttpGet httpGet = new HttpGet(ServidorTempo.URLBase+"/api/v1/weather/locale/"+idCidade+"/current?token="+ServidorTempo.token);
 
             //Aqui manipula o retorno recebido
             ResponseHandler<String> respondeHandler = new ResponseHandler<String>() {
@@ -103,7 +103,7 @@ public class ExecutorAPI {
             retorno = this.cliente.execute(httpGet, respondeHandler);
             //System.out.println("---------------------------------------------------------------");
         } catch (IOException ex) {
-            Logger.getLogger(ExecutorAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServidorTempo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
     }
@@ -112,7 +112,7 @@ public class ExecutorAPI {
     public String doTempoQuinzeDiAS(String idCidade) {
         String retorno = null;
         try {
-            HttpGet httpGet = new HttpGet(ExecutorAPI.URLBase + idCidade + ExecutorAPI.token);
+            HttpGet httpGet = new HttpGet(ServidorTempo.URLBase + idCidade + ServidorTempo.token);
 
             //Aqui manipula o retorno recebido
             ResponseHandler<String> respondeHandler = new ResponseHandler<String>() {
@@ -132,7 +132,7 @@ public class ExecutorAPI {
             retorno = this.cliente.execute(httpGet, respondeHandler);
             System.out.println("---------------------------------------------------------------");
         } catch (IOException ex) {
-            Logger.getLogger(ExecutorAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServidorTempo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
     }

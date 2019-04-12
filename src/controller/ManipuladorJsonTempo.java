@@ -1,13 +1,14 @@
-package previsaotempo;
+package controller;
 
 import java.util.ArrayList;
 import jdk.nashorn.internal.runtime.ParserException;
+import model.Cidade;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class LerJson {
+public class ManipuladorJsonTempo {
 
    final Cidade encontrada = new Cidade();
    
@@ -15,7 +16,7 @@ public class LerJson {
     
    //Utilizada para fazer a busca de uma determinada cidade e retornar os dados como temperatura maxima e minima... etc
     public String buscaCidade(String cidade, String estado) {
-        ExecutorAPI executa = ExecutorAPI.getInstancia();
+        ServidorTempo executa = ServidorTempo.getInstancia();
         JSONObject jSONObject;
         JSONArray jSONArray;
         
@@ -46,7 +47,7 @@ public class LerJson {
 
     //Preenche os dados do objeto cidade com os dados recolhidos do JSON e retorna o ID da cidade
     public Cidade preenchendoDadosCidadeEscolhida(String id) {
-        ExecutorAPI executa = ExecutorAPI.getInstancia();
+        ServidorTempo executa = ServidorTempo.getInstancia();
         JSONObject jSONObject;
         JSONArray jSONArray;
         ArrayList <String> lista = new ArrayList();

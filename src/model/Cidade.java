@@ -1,4 +1,4 @@
-package previsaotempo;
+package model;
 
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
@@ -16,6 +16,13 @@ public class  Cidade {
     private String umidadeRelativa;
     private String condicaoTempo;
     private String sensacaoTermica;
+    private ArrayList noticia;
+
+    public Cidade() {
+        this.noticia = new ArrayList();
+    }
+    
+    
 
     /**
      * @return the id
@@ -169,6 +176,20 @@ public class  Cidade {
      */
     public void setDados(String dados) {
         this.dados=dados;
+    }
+
+    /**
+     * @return the noticia
+     */
+    public ArrayList getNoticia() {
+        return noticia;
+    }
+
+    /**
+     * @param noticia the noticia to set
+     */
+    public void setNoticia(ArrayList noticia) {
+        this.noticia = noticia;
     }
 
     /**
