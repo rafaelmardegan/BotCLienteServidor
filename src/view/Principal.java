@@ -6,6 +6,7 @@ import model.Cidade;
 import model.Noticia;
 import controller.ServidorTempo;
 import controller.ServidorNoticias;
+
 import java.util.Scanner;
 
 public class Principal {
