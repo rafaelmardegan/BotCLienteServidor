@@ -40,7 +40,7 @@ public class Interpretador {
         else if(msg.equalsIgnoreCase("/noticias")){
             resposta = 2;
         }
-        else if (msg.equalsIgnoreCase("/previsao")) {
+        else if (msg.contains("/previsao")) {
             resposta = 3;
         }
         else{

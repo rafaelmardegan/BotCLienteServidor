@@ -45,6 +45,8 @@ public class ClienteChat extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btLimpar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
@@ -79,6 +81,7 @@ public class ClienteChat extends javax.swing.JFrame {
 
         btEnviar.setBackground(new java.awt.Color(0, 0, 255));
         btEnviar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btEnviar.setForeground(new java.awt.Color(255, 255, 255));
         btEnviar.setText("Enviar");
         btEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,12 +98,17 @@ public class ClienteChat extends javax.swing.JFrame {
 
         btLimpar.setBackground(new java.awt.Color(255, 0, 0));
         btLimpar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLimparActionPerformed(evt);
             }
         });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/uni2.png"))); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/uni3.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,28 +119,42 @@ public class ClienteChat extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextFieldMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(btEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(615, 615, 615)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(68, 68, 68))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(44, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,9 +187,10 @@ public class ClienteChat extends javax.swing.JFrame {
         jTextAreaChat.setText(jTextAreaChat.getText() + "(" + horaMsg() + ") Eu: " + jTextFieldMensagem.getText() + "\n"); // atualiza a text area com a nova mensagem.
 
         int retorno = interpretador.isComando(jTextFieldMensagem.getText());
+        String comando = jTextFieldMensagem.getText();
         jTextFieldMensagem.setText("");
         if (retorno == 1) {
-            jTextAreaChat.setText(modeloResposta() + "Estes são os meus criadores\nRafael Mardegan\nRafael Torres\nVagner Ereno");
+            jTextAreaChat.setText(modeloResposta() + "Estes são os meus criadores\nRafael Mardegan\nRafael Torres\nVagner Ereno\n");
 
         } else if (retorno == 2) {
 
@@ -215,9 +238,42 @@ public class ClienteChat extends javax.swing.JFrame {
 
         }
         else if (retorno == 3) {
-            isPrevisao = true;
-           
+       
+           // /previsao(porto alegre, rs)
+            String aux = comando.replaceAll("/previsao", "");
+            aux = aux.replace("(", "");
+            aux = aux.replace(")", "");
+            String vet[] = new String [2];
+            vet = aux.split(",");
             
+            for(int i = 0; i< 2; i++){
+                vet[i] = vet[i].trim();
+                vet[i] = vet[i].replaceAll(" ", "+");
+                
+                //jTextAreaChat.setText(modeloResposta() +"linha "+ i +  vet[i]+".");
+            }
+            ServidorTempo executa = ServidorTempo.getInstancia();
+            ManipuladorJsonTempo json = new ManipuladorJsonTempo();
+            String id = json.buscaCidade(vet[0], vet[1]);
+
+            while (id == null) {
+                jTextAreaChat.setText(modeloResposta() + "Ops, parace que algo deu errado.\n");
+            }
+            //Preenche com o restante de dados climaticos
+            Cidade selecionada = json.preenchendoDadosCidadeEscolhida(id);
+
+            
+            //System.out.println("O nome da cidade selecionada é " + selecionada.getNome() + ", Seu Estado " + selecionada.getEstado() + " e seu País " + selecionada.getPais());
+            jTextAreaChat.setText(modeloResposta() + "Cidade: " + selecionada.getNome()+"\n");
+            jTextAreaChat.setText(modeloResposta() + "Estado: " + selecionada.getEstado()+"\n");
+            jTextAreaChat.setText(modeloResposta() + "País: " + selecionada.getPais()+"\n");
+            jTextAreaChat.setText(modeloResposta() + "Temperatura: " + selecionada.getTemperaturaAtual() + "° C\n");
+            jTextAreaChat.setText(modeloResposta() + "Sensação térmica: " + selecionada.getSensacaoTermica() + "° C\n");
+            jTextAreaChat.setText(modeloResposta() + "Umidade relativa do ar: " + selecionada.getUmidadeRelativa() + "%\n");
+            jTextAreaChat.setText(modeloResposta() + "Velocidade do vento: " + selecionada.getVelocidadeDoVento() + " km/h\n");
+            jTextAreaChat.setText(modeloResposta() + "Condição do tempo: " + selecionada.getCondicaoTempo().replaceAll("\"", "")+ "\n\n=============================\n\n"); 
+
+           
         }
 
     }//GEN-LAST:event_btEnviarActionPerformed
@@ -287,6 +343,8 @@ public class ClienteChat extends javax.swing.JFrame {
     private javax.swing.JButton btLimpar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaChat;
     private javax.swing.JTextField jTextFieldMensagem;

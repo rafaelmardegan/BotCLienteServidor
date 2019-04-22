@@ -85,7 +85,7 @@ public class ManipuladorJsonTempo {
             //encontrada.setCondicaoTempo((String) jSONObject.get("condition").toString());
             //encontrada.setSensacaoTermica((String) jSONObject.get("sensation").toString());
 
-            System.out.println("Cidade Preenchida!");
+           
             return encontrada;
 
         } catch (Exception e) {
