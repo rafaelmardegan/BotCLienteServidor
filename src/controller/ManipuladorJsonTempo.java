@@ -34,11 +34,7 @@ public class ManipuladorJsonTempo {
             return encontrada.getId();
 
         } catch (Exception e) {
-            System.out.println("");
-            System.out.println("####################################################");
-            System.out.println("#           !!!Cidade não encontrada!!!            #");
-            System.out.println("####################################################");
-            System.out.println("");
+           
         }
 
         return null;
@@ -90,7 +86,7 @@ public class ManipuladorJsonTempo {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Não foi possivel preencher os dados climaticos!");
+            System.out.println("Não foi possível preencher os dados climáticos!");
         }
 
         return null;

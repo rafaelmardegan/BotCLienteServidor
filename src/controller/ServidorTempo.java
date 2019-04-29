@@ -38,9 +38,9 @@ public class ServidorTempo {
     public static ServidorTempo getInstancia() {
 
         //Verifica se ja tem algo instaciado, se sim retorna se não, cria
-        if (instancia == null) {
+       // if (instancia == null) {
             instancia = new ServidorTempo();
-        }
+      //  }
         return instancia;
     }
     
