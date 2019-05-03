@@ -43,6 +43,10 @@ public class Interpretador {
         else if (msg.contains("/previsao")) {
             resposta = 3;
         }
+        else if (msg.contains("/comandos")) {
+            resposta = 4;
+        }
+       
         else{
             resposta = 0;
         }
