@@ -16,7 +16,7 @@ public class Interpretador {
        
 
     }
-
+    
     public void interpreta(String mensagem) {
         int resposta;
         String resp;
