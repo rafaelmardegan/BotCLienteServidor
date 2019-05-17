@@ -151,11 +151,11 @@ public class ClienteChat extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(745, 745, 745)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(68, 68, 68))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(117, 117, 117)
+                                    .addGap(130, 130, 130)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -164,8 +164,8 @@ public class ClienteChat extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(165, 165, 165)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1030, Short.MAX_VALUE)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1021, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +213,7 @@ public class ClienteChat extends javax.swing.JFrame {
        LocalTime fimTarde = LocalTime.of(18, 30);
        
        LocalTime inicioNoite = LocalTime.of(18, 31);
-       LocalTime fimNoite = LocalTime.of(05, 59);
+       LocalTime fimNoite = LocalTime.of(23, 59);
 
        LocalTime agora = LocalTime.now();
        if(agora.isAfter(inicioManha) && agora.isBefore(fimManha)){
@@ -224,6 +224,9 @@ public class ClienteChat extends javax.swing.JFrame {
        }
        else if(agora.isAfter(inicioNoite) && agora.isBefore(fimNoite)){
            aux = "Boa noite";
+       }
+       else{
+           aux = "Olá";
        }
        
        return aux;
@@ -297,9 +300,9 @@ public class ClienteChat extends javax.swing.JFrame {
             ManipuladorJsonNoticia json2 = new ManipuladorJsonNoticia(2);
             ManipuladorJsonNoticia json3 = new ManipuladorJsonNoticia(4);
 
-            Noticia selecionada = json.preenchendoDadosCidadeEscolhida();
-            Noticia selecionada2 = json2.preenchendoDadosCidadeEscolhida();
-            Noticia selecionada3 = json3.preenchendoDadosCidadeEscolhida();
+            Noticia selecionada = json.preenchendoDadosNoticia();
+            Noticia selecionada2 = json2.preenchendoDadosNoticia();
+            Noticia selecionada3 = json3.preenchendoDadosNoticia();
 
             jTextAreaChat.setText(modeloResposta() + "Autor: " + selecionada.getAutor() + "\n");
             jTextAreaChat.setText(modeloResposta() + "Título: " + selecionada.getTitulo() + "\n");
@@ -383,7 +386,7 @@ public class ClienteChat extends javax.swing.JFrame {
                 jTextAreaChat.setText(modeloResposta() + "Ops, parace que algo deu errado.\n");
                 jTextAreaChat.setText(modeloResposta() + "O comando de previsão deve seguir o seguinte formato: /previsao(Nome da Cidade, sigla do estado)\n");
                 jTextAreaChat.setText(modeloResposta() + "Exemplo: /previsao(porto alegre, rs)\n");
-
+ 
             }
 
         }
